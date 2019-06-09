@@ -40,21 +40,27 @@ public class GameManager : MonoBehaviour {
     {
 
         // Invoke("Restart", restartDelay);
+        /*
         if(SceneManager.GetActiveScene().buildIndex == 1)
             SceneManager.LoadScene(1);
         else
             SceneManager.LoadScene(4);
+        */
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+            SceneManager.LoadScene(3);
 
 
     }
 
     public void ProceedGame()
     {
-     
-            // Invoke("Restart", restartDelay);
-            
-            nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            SceneManager.LoadScene(nextSceneIndex);
+
+        // Invoke("Restart", restartDelay);
+
+        // nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        // SceneManager.LoadScene(nextSceneIndex);
+        SceneManager.LoadScene(0);
         
 
 
@@ -73,7 +79,8 @@ public class GameManager : MonoBehaviour {
 
     void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     }
 
     public void AcornTrap()

@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseSpeed: 2
-  chaseSpeedIncrement: 0.1
+  chaseSpeedIncrement: 0.15
 --- !u!212 &212369536320685312
 SpriteRenderer:
   m_ObjectHideFlags: 1
