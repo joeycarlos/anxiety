@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour {
             Destroy(collectibleIndicatorList[dashCharges]);
             collectibleIndicatorList.RemoveAt(dashCharges);
 
-            // boss.GetComponent<BossController>().IncrementBossSpeed();
+            boss.GetComponent<BossController>().IncrementBossSpeed();
 
             
 
