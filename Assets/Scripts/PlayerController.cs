@@ -39,6 +39,12 @@ public class PlayerController : MonoBehaviour {
 
     public Animator playerAnimator;
 
+    private AudioSource audioSource;
+
+    public AudioClip collect;
+    public AudioClip dash;
+    public AudioClip jump;
+
 
     // Use this for initialization
     void Start () {
@@ -48,7 +54,8 @@ public class PlayerController : MonoBehaviour {
         sr = GetComponent<SpriteRenderer>();
         dashCharges = 0;
         boss = GameObject.Find("BossEntity");
-        
+        audioSource = gameObject.GetComponent<AudioSource>();
+
     }
 
     void Update()
@@ -58,7 +65,7 @@ public class PlayerController : MonoBehaviour {
         PlayerDash();
         MovePlayer();
         
-
+        
     }
 
     void PlayerJump()
@@ -68,6 +75,7 @@ public class PlayerController : MonoBehaviour {
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.UpArrow))
         {
+            audioSource.PlayOneShot(jump, 0.3F);
             isJumping = true;
             
             jumpTimeCounter = jumpTime;
@@ -98,6 +106,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space) && dashCharges > 0)
         {
+            audioSource.PlayOneShot(dash, 0.3F);
             dashCharges --;
             currentDashTime = 0.0f;
             dashGracePeriod = 0.0f;
@@ -185,6 +194,7 @@ public class PlayerController : MonoBehaviour {
         }
         else if (collision.tag == "Collectible" && dashCharges < maxDashCharges)
         {
+            audioSource.PlayOneShot(collect, 0.3F);
             dashCharges++;
             dashCharges = Mathf.Clamp(dashCharges, 0, maxDashCharges);
             cIndicator = Instantiate(collectibleIndicator, transform.position, Quaternion.identity);
