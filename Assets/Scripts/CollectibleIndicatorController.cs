@@ -28,9 +28,14 @@ public class CollectibleIndicatorController : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
             }
-       
+        RotateCollectible();
         
 	}
+
+    private void RotateCollectible()
+    {
+        transform.Rotate(Vector3.forward, 50.0f * Time.deltaTime);
+    }
 
     public void setIndicatorFollowDistance(int listIndex)
     {

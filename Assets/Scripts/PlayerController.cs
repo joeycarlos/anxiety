@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour {
 
             
 
-            sr.color = Color.magenta;
+            sr.color = Color.cyan;
 
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow))
             {

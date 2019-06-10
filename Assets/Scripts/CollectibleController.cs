@@ -15,14 +15,20 @@ public class CollectibleController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        RotateCollectible();
 	}
+
+    private void RotateCollectible()
+    {
+        transform.Rotate(Vector3.forward, 50.0f * Time.deltaTime);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        
-        if (collision.tag == "Player" && pc.GetDashCharges() < pc.GetMaxDashCharges())
+
+        // if (collision.tag == "Player" && pc.GetDashCharges() < pc.GetMaxDashCharges())
+        if (collision.tag == "Player")
         {
             Destroy(gameObject);
         }
