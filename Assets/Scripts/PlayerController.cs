@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour {
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.UpArrow))
         {
-            audioSource.PlayOneShot(jump, 0.3F);
+            audioSource.PlayOneShot(jump, 0.2F);
             isJumping = true;
             
             jumpTimeCounter = jumpTime;

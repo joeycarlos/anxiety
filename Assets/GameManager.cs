@@ -28,12 +28,15 @@ public class GameManager : MonoBehaviour {
 
         //if ((SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 4) && Input.GetKeyDown(KeyCode.Space))
         //    ReturnToMenu();
-        if ((SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 3) && Input.GetKeyDown(KeyCode.Space))
+        if ((SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 4) && Input.GetKeyDown(KeyCode.Space))
         {
             ReturnToMenu();
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 0 && Input.GetKeyDown(KeyCode.Space))
+            SceneManager.LoadScene(1);
+
+        if (SceneManager.GetActiveScene().buildIndex == 1 && Input.GetKeyDown(KeyCode.Space))
             ProceedToGame();
 
 
@@ -51,8 +54,8 @@ public class GameManager : MonoBehaviour {
             SceneManager.LoadScene(4);
         */
 
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-            SceneManager.LoadScene(3);
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+            SceneManager.LoadScene(4);
 
 
     }
@@ -64,7 +67,7 @@ public class GameManager : MonoBehaviour {
 
         // nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         // SceneManager.LoadScene(nextSceneIndex);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
         
 
 
@@ -73,7 +76,7 @@ public class GameManager : MonoBehaviour {
     void ProceedToGame()
     {
         
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
     }
 
     void ReturnToMenu()
